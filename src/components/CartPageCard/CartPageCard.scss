@@ -1,0 +1,119 @@
+.cart__page__card__box {
+  // border: 1px soild #e6e6e6;
+  .product__title__cart__page {
+    width: 292px;
+    p {
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+
+  .product__price__cart__page {
+    margin: 5px 0px;
+    p {
+      font-weight: 600;
+      font-size: 19px;
+    }
+  }
+  .main__box__cart__page {
+    display: flex;
+    // height: 192px;
+    justify-content: space-between;
+    // border: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+    padding: 5px 5px;
+    margin: 20px 0px;
+  }
+
+  .product__brand__cart__page {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .product__name__cart__page {
+    font-size: 22px;
+    display: block;
+    margin: 16px 0px;
+    font-weight: 400;
+  }
+  .active__img {
+    display: block;
+  }
+  .notActive__img {
+    display: none;
+  }
+  .all__img {
+    width: 200px;
+    // height: 288px;
+  }
+  .action__cart__page {
+    display: flex;
+  }
+  .quant__btn {
+    margin-right: 20px;
+    button {
+      height: 45px;
+      width: 45px;
+      background-color: white;
+      border: 1px solid #e6e6e6;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-evenly;
+  }
+  .change__img__btn{
+    position: relative;
+    top: -31px;
+    right: -142px;
+
+    button{
+      width: 24px;
+      height: 24px;
+      margin: 0px 5px;
+      background: rgba(0, 0, 0, 0.73);
+      color: white;
+    }
+  }
+  .attr__title{
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .outer__attribute{
+    display: flex;
+    margin:10px 0px
+  }
+  .attribute__data{
+    border: 1px solid #1D1F22;
+    padding: 5px;
+    margin: 0px 10px 0px 0px;
+  }
+  .attribute__data__selected{
+    border: 1px solid #1D1F22;
+    padding: 5px;
+    margin: 0px 10px 0px 0px;
+    background-color: #1D1F22;
+    color: white;
+  }
+  .attribute__color__selected{
+    border: 3px solid #5ECE7B;
+    // padding: 5px;
+    height: 25px;
+    width: 25px;
+    
+    margin: 0px 10px 0px 0px;
+  }
+  .attribute__color{
+    border: 1px solid #1D1F22;
+    // padding: 5px;
+    height: 25px;
+    width: 25px;
+    
+    margin: 0px 10px 0px 0px;
+  }
+  
+}

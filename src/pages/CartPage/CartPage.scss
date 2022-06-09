@@ -1,0 +1,22 @@
+.cart__page__container{
+    width: 95%;
+    margin: 0 auto;
+
+    .page__title{
+        font-weight: 700;
+        font-size: 32px;
+    }
+    .total__price__tax{
+        font-weight: 700;
+    }
+    .ordered__btn{
+        background-color: #5ECE7B;
+        width: 279px;
+        height: 43px;
+        border: none;
+        margin-top: 20px;
+        outline: none;
+        cursor: pointer;
+        color: white;
+      }
+}
