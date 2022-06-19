@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 export class CartPage extends Component {
   render() {
 
+    // Function whose purpose to get the total price of the cart
     const getTotalPrice = (curren)  =>{
       let totalPrice = 0;
       this.props.cart.forEach(item => {
@@ -18,7 +19,7 @@ export class CartPage extends Component {
       });
       return parseFloat(totalPrice).toFixed(2);
     }
-
+    // Function whose purpose to get the total quantity of the cart
     const getTotalItem = () =>{
       let totalItem = 0;
       this.props.cart.forEach(item => {

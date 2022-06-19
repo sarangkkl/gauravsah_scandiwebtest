@@ -5,12 +5,22 @@ import { Routes, Route, Navigate } from "react-router-dom";
 export class App extends Component {
   constructor(props) {
     super(props);
+    // Here I will query all the categories and store them in the category array and after that 
+    // i will set the state of loading to false
+
+    // I am mapping the categories to create the LINKS OF The Categories Route like below
+    // {this.state.categories.categories.map((item, index) => (
+    //   <Route exact path={`${item.name}`}  element={<ProductListing  key={`${index}`}/>}  key={index}/>
+    // ))}
+
     this.state = {
       categories: [],
       loading: true,
     };
   }
 
+  // This function only fetching the data and updating the state
+  
   componentDidMount() {
     const query = `
     query Query {

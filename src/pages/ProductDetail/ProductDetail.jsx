@@ -5,6 +5,8 @@ import Parser from "html-react-parser";
 
 import { connect } from "react-redux";
 import { addToCart } from "../../store/reducers/cartReducer";
+
+
 export class ProductDetail extends Component {
   constructor() {
     super();
@@ -19,7 +21,7 @@ export class ProductDetail extends Component {
   componentDidMount() {
     const currentUrl = window.location.pathname;
     const id = currentUrl.replace("/", "");
-    // console.log("The id is", id);
+   
     const query = `
     query ($productId: String!) {
       product(id:$productId) {
@@ -71,9 +73,6 @@ export class ProductDetail extends Component {
           product: data.data.product,
           loading: false,
         });
-
-        // console.log("The data i am getting is", data.data.product);
-        // {console.log(this.state.product)}
       });
   }
   render() {
@@ -82,39 +81,46 @@ export class ProductDetail extends Component {
       var x = document.getElementById("main__img");
       x.src = value;
     };
+
+    // Function that is handling the add to cart functionality
     const handleAddToCart = () => {
-      
+
+      // The selected variation is an array which track the selected attributes but its 
+      // order depends on the user click on the attributes so we need to sort the array in the order
+      // of the attributes which is given because i am using them to render the selected attributes
       const order = this.state.product.attributes.map((attribute) =>
         this.state.selected_variation.find((v) => v.type === attribute.id)
       );
-
       const data = {
         variation: order,
         product: this.state.product,
         quantity: this.state.quantity,
       };
-      if (
-        this.state.selected_variation.length ===
-        this.state.product.attributes.length
-      ) {
+      // Checking if the length of the variation is equal to the length of the attributes
+      // This will ensure all the variation is selected
+      if (this.state.selected_variation.length ===this.state.product.attributes.length) {
         this.props.addToCart(data);
         this.setState({
           selected_variation: []
         })
-    
-
       } else {
         alert("Please Select all the variations");
       }
     };
 
+
+    // function that is handing the change in the variation and updating the selected variation
+
     const handleVariation = (e)=>{
       let type = e.target.name;
       let value = e.target.value;
+
+      // Checking is the selected attribute exist
       let index = this.state.selected_variation.findIndex((x)=>{
         return x.type === type
       })
- 
+      
+      // if not exist then add it
       if(index === -1){
         
         this.setState({
@@ -127,7 +133,7 @@ export class ProductDetail extends Component {
         this.setState({
           selected_variation:newData,
         })
-        // need to update the state
+        
       }
       
     }
